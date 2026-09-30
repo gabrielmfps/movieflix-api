@@ -5,20 +5,23 @@
   "main": "index.js",
   "scripts": {
     "dev": "npx tsx src/server.ts",
-    "format": "prettier --write src/**/*.ts"
+    "format": "prettier --write src/**/*.ts",
+    "postinstall": "prisma skills sync || exit 0"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "devDependencies": {
     "@types/express": "^5.0.6",
     "@types/node": "^26.6.3",
-    "prettier": "3.9.9",
+    "prettier": "^3.9.9",
+    "prisma": "^8.0.0-rc.19",
     "tsx": "^4.23.15",
     "typescript": "^5.9.3"
   },
   "dependencies": {
+    "@prisma/orm-postgres": "^8.0.0-rc.14",
     "express": "^5.2.1"
   }
 }
